@@ -156,6 +156,137 @@ def clearScreen(cheat,random_string):
                 print("|X X - -  9  - - X X|")
                 print("|- - - -     - - - -|")
                 print("")
+            elif random_string[i] == ">":
+                print("|X - - -  >  - - - X|")
+                print("|- - - -     - - - -|")
+                print("")
+            elif random_string[i] == "<":
+                print("|- - - -  <  - - - -|")
+                print("|X - - -     - - - X|")
+                print("")
+            elif random_string[i] == "}":
+                print("|- X - -  }  - - X -|")
+                print("|- - - -     - - - -|")
+                print("")
+            elif random_string[i] == "{":
+                print("|- - - -  {  - - - -|")
+                print("|- X - -     - - X -|")
+                print("")
+            elif random_string[i] == "]":
+                print("|- - X -  ]  - X - -|")
+                print("|- - - -     - - - -|")
+                print("")
+            elif random_string[i] == "[":
+                print("|- - - -  [  - - - -|")
+                print("|- - X -     - X - -|")
+                print("")
+            elif random_string[i] == ")":
+                print("|- - - X  )  X - - -|")
+                print("|- - - -     - - - -|")
+                print("")
+            elif random_string[i] == "(":
+                print("|- - - -  (  - - - -|")
+                print("|- - - X     X - - -|")
+                print("")
+            elif random_string[i] == "#":
+                print("|X - - X  #  X - - X|")
+                print("|- - - -     - - - -|")
+                print("")
+            elif random_string[i] == "@":
+                print("|- - - -  @  - - - -|")
+                print("|X - - X     X - - X|")
+                print("")
+            elif random_string[i] == "^":
+                print("|X - - -  ^  - - - X|")
+                print("|- - X -     - X - -|")
+                print("")
+            elif random_string[i] == "+":
+                print("|- - - X  +  X - - -|")
+                print("|- X - -     - - X -|")
+                print("")
+            elif random_string[i] == "*":
+                print("|- X - -  *  - - X -|")
+                print("|- - - X     X - - -|")
+                print("")
+            elif random_string[i] == "=":
+                print("|- - X -  =  - X - -|")
+                print("|X - - -     - - - X|")
+                print("")
+            elif random_string[i] == "$":
+                print("|X - - -  $  - - - X|")
+                print("|- - - X     X - - -|")
+                print("")
+            elif random_string[i] == "&":
+                print("|- - - X  &  X - - -|")
+                print("|X - - -     - - - X|")
+                print("")
+            elif random_string[i] == "/":
+                print("|- X - -  /  - - X -|")
+                print("|- - X -     - X - -|")
+                print("")
+            elif random_string[i] == "\\":
+                print("|- X - -  \\  - - X -|")
+                print("|- - X -     - X - -|")
+                print("")
+            elif random_string[i] == "|":
+                print("|- X - -  |  - - X -|")
+                print("|- - X -     - X - -|")
+                print("")
+            elif random_string[i] == "-":
+                print("|- - X -  -  - X - -|")
+                print("|- X - -     - - X -|")
+                print("")
+
+            elif random_string[i] == "_":
+                print("|- - X -  _  - X - -|")
+                print("|- X - -     - - x -|")
+                print("")
+            elif random_string[i] == "%":
+                print("|- - X -  %  - X - -|")
+                print("|- X - -     - - X -|")
+                print("")
+            elif random_string[i] == ";":
+                print("|X - - -  ;  - - - X|")
+                print("|- x - -     - - X -|")
+                print("")
+            elif random_string[i] == ":":
+                print("|X - - -   :  - - - X|")
+                print("|- X - -     - - X -|")
+                print("")
+            elif random_string[i] == "?":
+                print("|- - - X  ?  X - - -|")
+                print("|- - X -     - X - -|")
+                print("")
+            elif random_string[i] == "!":
+                print("|- - - -  !  - - - -|")
+                print("|- - - -     - - - -|")
+                print("")
+            elif random_string[i] == ",":
+                print("|- - X -  ,  - X - -|")
+                print("|- - - X     X - - -|")
+                print("")
+            elif random_string[i] == ".":
+                print("|- - X -  .  - X - -|")
+                print("|- - - X     X - - -|")
+                print("")
+            elif random_string[i] == "~":
+                print("|- - X -  ~  - X - -|")
+                print("|- - - X     X - - -|")
+                print("")
+            elif random_string[i] == "'":
+                print("|- X - -  '  - - X -|")
+                print("|X - - -     - - - X|")
+                print("")
+            elif random_string[i] == '"':
+                print('|- X - -  "  - - X -|')
+                print("|X - - -     - - - X|")
+                print("")
+            elif random_string[i] == "`":
+                print("|- X - -  `  - - X -|")
+                print("|X - - -     - - - X|")
+                print("")
+
+
 
 def mainGame(gameChoice,cheat):
     def genString():
@@ -214,7 +345,7 @@ def mainGame(gameChoice,cheat):
 #Main ----
 os.system('clear')
 while True:
-    print("Which game would you like to play?")
+    print("Which game would you like to play?\n")
     game = int(input("(1)Char Game\n(2)Sym Game\n(3)Word Game\n(4)Number Game\n"))
     if game not in {1, 2, 3, 4}:
         print("Invalid game!")
@@ -222,7 +353,7 @@ while True:
         break
 while True:
     print("Would you like cheats?")
-    cheat = int(input("(1)No (2)Home Row (3)Combos"))
+    cheat = int(input("(1)No (2)Home Row (3)Combos\n"))
     if cheat not in {1, 2, 3}:
          print("Invalid!")
     else:
