@@ -116,12 +116,47 @@ def clearScreen(cheat,random_string):
                 print("|X - X -  Z  - X - X|")
                 print("|- - - -     - - - -|")
                 print("")
+            elif random_string[i] == "0":
+                print("|- - - -  0  - - - -|")
+                print("|- - X X     X X - -|")
+                print("")
+            elif random_string[i] == "1":
+                print("|- - - -  1  - - - -|")
+                print("|- X - X     X - X -|")
+                print("")
+            elif random_string[i] == "2":
+                print("|- - - -  2  - - - -|")
+                print("|- X X -     - X X -|")
+                print("")
+            elif random_string[i] == "3":
+                print("|- - - -  3  - - - -|")
+                print("|X - X -     - X - X|")
+                print("")
+            elif random_string[i] == "4":
+                print("|- - - -  4  - - - -|")
+                print("|X X - -     - - X X|")
+                print("")
+            elif random_string[i] == "5":
+                print("|- - X X  5  X X - -|")
+                print("|- - - -     - - - -|")
+                print("")
+            elif random_string[i] == "6":
+                print("|- X - X  6  X - X -|")
+                print("|- - - -     - - - -|")
+                print("")
+            elif random_string[i] == "7":
+                print("|- X X -  7  - X X -|")
+                print("|- - - -     - - - -|")
+                print("")
+            elif random_string[i] == "8":
+                print("|X - X -  8  - X - X|")
+                print("|- - - -     - - - -|")
+                print("")
+            elif random_string[i] == "9":
+                print("|X X - -  9  - - X X|")
+                print("|- - - -     - - - -|")
+                print("")
 
-
-    
-    
-
-#CHAR GAME -----
 def mainGame(gameChoice,cheat):
     def genString():
         if game == 1:
@@ -129,8 +164,8 @@ def mainGame(gameChoice,cheat):
             random_str = random_str.lower()
             return random_str
         if game == 2:
-            random_str = chr(random.randint(32, 126))
-            random_str = random_str.lower()
+            word_list = ['<', '>', '{', '}', '[', ']', '(', ')', '#', '@', '^', '+', '*', '=', '$', '&', '\\', '/', '|', '-', '_', '%', ':', ';', '?', '!', '.', ',', '~', "'", '"', '`']
+            random_str = random.choice(word_list)
             return random_str
         if game == 3:
             word_list = ["time", "love", "game", "word", "free", "fire", "song", "home", 
@@ -138,9 +173,12 @@ def mainGame(gameChoice,cheat):
          "wind", "blue", "rain", "dark", "wild", "calm", "warm", "kind", 
          "easy", "hard", "open", "deep", "soft", "true", "just", "pure", 
          "safe", "bold", "even", "fair", "luck", "wise", "rich", "newt"]
-            random_str =  random.choice(word_list)
+            random_str = random.choice(word_list)
             return random_str
-
+        if game ==  4:
+            random_str = random.randint(0, 100)
+            random_str = str(random_str)
+            return random_str
     while True:
         try:
             stop = int(input("What score would you like to play to?"))
@@ -177,8 +215,8 @@ def mainGame(gameChoice,cheat):
 os.system('clear')
 while True:
     print("Which game would you like to play?")
-    game = int(input("(1)Char Game\n(2)ACII Game\n(3)Word Game\n(4)Number Game\n"))
-    if game not in {1, 2, 3}:
+    game = int(input("(1)Char Game\n(2)Sym Game\n(3)Word Game\n(4)Number Game\n"))
+    if game not in {1, 2, 3, 4}:
         print("Invalid game!")
     else:
         break
@@ -186,7 +224,7 @@ while True:
     print("Would you like cheats?")
     cheat = int(input("(1)No (2)Home Row (3)Combos"))
     if cheat not in {1, 2, 3}:
-         print("Invalid game!")
+         print("Invalid!")
     else:
         break
 mainGame(game,cheat)
