@@ -28,27 +28,40 @@ def clearScreen(cheat,random_string):
             (BM      ,'t'),
             (BI      ,'e'),
 
+            (TP | OT       ,'>'),
+            (TR | OT       ,'}'),
+            (TM | OT       ,']'),
+            (TI | OT       ,')'),
+            (BP | OT       ,'<'),
+            (BR | OT       ,'{'),
+            (BM | OT       ,'['),
+            (BI | OT       ,'('),
+
             (TP | TR      , 'b'),
             (TP | TI      , 'g'),
             (TP | TM      , 'z'),
             (TP | BM      , 'x'),
+            (TP | BM | OT , '^'),
             (TP | BI      , 'm'),
+            (TP | BI | OT , '$'),
             (TP | BR      , ';'),
             (TP | BR | IT , ':'),
             (TP | BR | OT , 'X'), #Empty
 
             (TR | TM      , 'p'),
-            (TR | TI       ,'f'),
+            (TR | TI      , 'f'),
             (TR | BI      , 'v'),
+            (TR | BI | OT , '*'),
             (TR | BM      , '/'),
             (TR | BM | IT , '\\'),
             (TR | BM | OT , '|'),
             (TR | BP      , "'"),
             #(TR | BP | IT , '"'),
-            #(TR | BP | OT , "`")
+            #(TR | BP | OT , "`"),
 
             (TM | TP      , 'y'),
             (TM | BP      , 'j'),
+            (TM | BP | OT , '='),
             (TM | BR      , '-'),
             (TM | BR | IT , '_'),
             (TM | BR | OT , '%'),
@@ -57,7 +70,9 @@ def clearScreen(cheat,random_string):
             (TM | BI | OT , '~'),
 
             (TI | BR       , 'k'),
+            (TI | BR | OT  , '+'),
             (TI | BP       , 'w'),
+            (TI | BP | OT  , '&'),
             (TI | BM       , '?'),
             (TI | BM | IT  , '!'),
             (TI | BM | OT  , 'X'), #empty
