@@ -6,286 +6,83 @@ import time
 #CLEAR SCREEN ----
 def clearScreen(cheat,random_string):
     os.system('clear')
-    if cheat == 2:
-        print("___________________")
-        print("\033[1m|R S N I     I N S R|\033[0m")
-        print("\033[1m|A O T E     E T O A|\033[0m")
     if cheat == 3:
+        TP = 1 << 0
+        TR = 1 << 1
+        TM = 1 << 2
+        TI = 1 << 3
+        BP = 1 << 4
+        BR = 1 << 5
+        BM = 1 << 6
+        BI = 1 << 7
+        IT = 1 << 8
+        OT = 1 << 9
+
+        CHORDS = [
+            (TP      ,'r'),
+            (TR      ,'s'),
+            (TM      ,'n'),
+            (TI      ,'i'),
+            (BP      ,'a'),
+            (BR      ,'o'),
+            (BM      ,'t'),
+            (BI      ,'e'),
+
+            (TP | TR      , 'b'),
+            (TP | TI      , 'g'),
+            (TP | TM      , 'z'),
+            (TP | BM      , 'x'),
+            (TP | BI      , 'm'),
+            (TP | BR      , ';'),
+            (TP | BR | IT , ':'),
+            (TP | BR | OT , 'X'), #Empty
+
+            (TR | TM      , 'p'),
+            (TR | TI       ,'f'),
+            (TR | BI      , 'v'),
+            (TR | BM      , '/'),
+            (TR | BM | IT , '\\'),
+            (TR | BM | OT , '|'),
+            (TR | BP      , "'"),
+            #(TR | BP | IT , '"'),
+            #(TR | BP | OT , "`")
+
+            (TM | TP      , 'y'),
+            (TM | BP      , 'j'),
+            (TM | BR      , '-'),
+            (TM | BR | IT , '_'),
+            (TM | BR | OT , '%'),
+            (TM | BI      , ','),
+            (TM | BI | IT  ,'.'),
+            (TM | BI | OT , '~'),
+
+            (TI | BR       , 'k'),
+            (TI | BP       , 'w'),
+            (TI | BM       , '?'),
+            (TI | BM | IT  , '!'),
+            (TI | BM | OT  , 'X'), #empty
+
+            (BP | BR      , 'l'),
+            (BM | BI      , 'h'),
+            (BR | BM      , 'u'),
+            (BP | BM      , 'q'),
+            (BP | BI      , 'd'),
+            (BR | BI      , 'c')
+
+        ]
+
+        def draw_chord(chord):
+            k = lambda chord, key: "X" if chord & key != 0 else "-"
+            print('{} {} {} {}   {} {} {} {}\n'
+                  '{} {} {} {}   {} {} {} {}\n'
+                  '   {} {}   {} {}\n'
+            .format(k(chord,TP), k(chord,TR), k(chord,TM), k(chord,TI), k(chord,TI), k(chord,TM), k(chord,TR), k(chord,TP), 
+                    k(chord,BP), k(chord,BR), k(chord,BM), k(chord,BI), k(chord,BI), k(chord,BM), k(chord,BR), k(chord,BP),
+                                              k(chord,IT), k(chord,OT), k(chord,OT), k(chord,IT)))        
         for i in range(len(random_string)):
-            if random_string[i] == "a":
-                print("|- - - -  A  - - - -|")
-                print("|X - - -     - - - X|")
-                print("")
-            elif random_string[i] == "b":
-                print("|X X - -  B  - - X X|")
-                print("|- - - -     - - - -|")
-                print("")
-            elif random_string[i] == "c":
-                print("|- - - -  C  - - - -|")
-                print("|- X - X     X - X -|")
-                print("")
-            elif random_string[i] == "d":
-                print("|- - - -  D  - - - -|")
-                print("|X - - X     X - - X|")
-                print("")
-            elif random_string[i] == "e":
-                print("|- - - -  E  - - - -|")
-                print("|- - - X     X - - -|")
-                print("")
-            elif random_string[i] == "f":
-                print("|- X - X  F  X - X -|")
-                print("|- - - -     - - - -|")
-                print("")
-            elif random_string[i] == "g":
-                print("|X - - X  G  X - - X|")
-                print("|- - - -     - - - -|")
-                print("")
-            elif random_string[i] == "h":
-                print("|- - - -  H  - - - -|")
-                print("|- - X X     X X - -|")
-                print("")
-            elif random_string[i] == "i":
-                print("|- - - X  I  X - - -|")
-                print("|- - - -     - - - -|")
-                print("")
-            elif random_string[i] == "j":
-                print("|- - X -  J  - X - -|")
-                print("|X - - -     - - - X|")
-                print("")
-            elif random_string[i] == "k":
-                print("|- - - X  K  X - - -|")
-                print("|- X - -     - - X -|")
-                print("")
-            elif random_string[i] == "l":
-                print("|- - - -  L  - - - -|")
-                print("|X X - -     - - X X|")
-                print("")
-            elif random_string[i] == "m":
-                print("|X - - -  M  - - - X|")
-                print("|- - - X     X - - -|")
-                print("")
-            elif random_string[i] == "n":
-                print("|- - X -  N  - X - -|")
-                print("|- - - -     - - - -|")
-                print("")
-            elif random_string[i] == "o":
-                print("|- - - -  O  - - - -|")
-                print("|- X - -     - - X -|")
-                print("")
-            elif random_string[i] == "p":
-                print("|- X X -  P  - X X -|")
-                print("|- - - -     - - - -|")
-                print("")
-            elif random_string[i] == "q":
-                print("|- - - -  Q  - - - -|")
-                print("|X - X -     - X - X|")
-                print("")
-            elif random_string[i] == "r":
-                print("|X - - -  R  - - - X|")
-                print("|- - - -     - - - -|")
-                print("")
-            elif random_string[i] == "s":
-                print("|- X - -  S  - - X -|")
-                print("|- - - -     - - - -|")
-                print("")
-            elif random_string[i] == "t":
-                print("|- - - -  T  - - - -|")
-                print("|- - X -     - X - -|")
-                print("")
-            elif random_string[i] == "u":
-                print("|- - - -  U  - - - -|")
-                print("|- X X -     - X X -|")
-                print("")
-            elif random_string[i] == "v":
-                print("|- X - -  V  - - X -|")
-                print("|- - - X     X - - -|")
-                print("")
-            elif random_string[i] == "w":
-                print("|- - - X  W  X - - -|")
-                print("|X - - -     - - - X|")
-                print("")
-            elif random_string[i] == "x":
-                print("|X - - -  X  - - - X|")
-                print("|- - X -     - X - -|")
-                print("")
-            elif random_string[i] == "y":
-                print("|- - X X  Y  X X - -|")
-                print("|- - - -     - - - -|")
-                print("")
-            elif random_string[i] == "z":
-                print("|X - X -  Z  - X - X|")
-                print("|- - - -     - - - -|")
-                print("")
-            elif random_string[i] == "0":
-                print("|- - - -  0  - - - -|")
-                print("|- - X X     X X - -|")
-                print("")
-            elif random_string[i] == "1":
-                print("|- - - -  1  - - - -|")
-                print("|- X - X     X - X -|")
-                print("")
-            elif random_string[i] == "2":
-                print("|- - - -  2  - - - -|")
-                print("|- X X -     - X X -|")
-                print("")
-            elif random_string[i] == "3":
-                print("|- - - -  3  - - - -|")
-                print("|X - X -     - X - X|")
-                print("")
-            elif random_string[i] == "4":
-                print("|- - - -  4  - - - -|")
-                print("|X X - -     - - X X|")
-                print("")
-            elif random_string[i] == "5":
-                print("|- - X X  5  X X - -|")
-                print("|- - - -     - - - -|")
-                print("")
-            elif random_string[i] == "6":
-                print("|- X - X  6  X - X -|")
-                print("|- - - -     - - - -|")
-                print("")
-            elif random_string[i] == "7":
-                print("|- X X -  7  - X X -|")
-                print("|- - - -     - - - -|")
-                print("")
-            elif random_string[i] == "8":
-                print("|X - X -  8  - X - X|")
-                print("|- - - -     - - - -|")
-                print("")
-            elif random_string[i] == "9":
-                print("|X X - -  9  - - X X|")
-                print("|- - - -     - - - -|")
-                print("")
-            elif random_string[i] == ">":
-                print("|X - - -  >  - - - X|")
-                print("|- - - -     - - - -|")
-                print("")
-            elif random_string[i] == "<":
-                print("|- - - -  <  - - - -|")
-                print("|X - - -     - - - X|")
-                print("")
-            elif random_string[i] == "}":
-                print("|- X - -  }  - - X -|")
-                print("|- - - -     - - - -|")
-                print("")
-            elif random_string[i] == "{":
-                print("|- - - -  {  - - - -|")
-                print("|- X - -     - - X -|")
-                print("")
-            elif random_string[i] == "]":
-                print("|- - X -  ]  - X - -|")
-                print("|- - - -     - - - -|")
-                print("")
-            elif random_string[i] == "[":
-                print("|- - - -  [  - - - -|")
-                print("|- - X -     - X - -|")
-                print("")
-            elif random_string[i] == ")":
-                print("|- - - X  )  X - - -|")
-                print("|- - - -     - - - -|")
-                print("")
-            elif random_string[i] == "(":
-                print("|- - - -  (  - - - -|")
-                print("|- - - X     X - - -|")
-                print("")
-            elif random_string[i] == "#":
-                print("|X - - X  #  X - - X|")
-                print("|- - - -     - - - -|")
-                print("")
-            elif random_string[i] == "@":
-                print("|- - - -  @  - - - -|")
-                print("|X - - X     X - - X|")
-                print("")
-            elif random_string[i] == "^":
-                print("|X - - -  ^  - - - X|")
-                print("|- - X -     - X - -|")
-                print("")
-            elif random_string[i] == "+":
-                print("|- - - X  +  X - - -|")
-                print("|- X - -     - - X -|")
-                print("")
-            elif random_string[i] == "*":
-                print("|- X - -  *  - - X -|")
-                print("|- - - X     X - - -|")
-                print("")
-            elif random_string[i] == "=":
-                print("|- - X -  =  - X - -|")
-                print("|X - - -     - - - X|")
-                print("")
-            elif random_string[i] == "$":
-                print("|X - - -  $  - - - X|")
-                print("|- - - X     X - - -|")
-                print("")
-            elif random_string[i] == "&":
-                print("|- - - X  &  X - - -|")
-                print("|X - - -     - - - X|")
-                print("")
-            elif random_string[i] == "/":
-                print("|- X - -  /  - - X -|")
-                print("|- - X -     - X - -|")
-                print("")
-            elif random_string[i] == "\\":
-                print("|- X - -  \\  - - X -|")
-                print("|- - X -     - X - -|")
-                print("")
-            elif random_string[i] == "|":
-                print("|- X - -  |  - - X -|")
-                print("|- - X -     - X - -|")
-                print("")
-            elif random_string[i] == "-":
-                print("|- - X -  -  - X - -|")
-                print("|- X - -     - - X -|")
-                print("")
-
-            elif random_string[i] == "_":
-                print("|- - X -  _  - X - -|")
-                print("|- X - -     - - x -|")
-                print("")
-            elif random_string[i] == "%":
-                print("|- - X -  %  - X - -|")
-                print("|- X - -     - - X -|")
-                print("")
-            elif random_string[i] == ";":
-                print("|X - - -  ;  - - - X|")
-                print("|- x - -     - - X -|")
-                print("")
-            elif random_string[i] == ":":
-                print("|X - - -   :  - - - X|")
-                print("|- X - -     - - X -|")
-                print("")
-            elif random_string[i] == "?":
-                print("|- - - X  ?  X - - -|")
-                print("|- - X -     - X - -|")
-                print("")
-            elif random_string[i] == "!":
-                print("|- - - -  !  - - - -|")
-                print("|- - - -     - - - -|")
-                print("")
-            elif random_string[i] == ",":
-                print("|- - X -  ,  - X - -|")
-                print("|- - - X     X - - -|")
-                print("")
-            elif random_string[i] == ".":
-                print("|- - X -  .  - X - -|")
-                print("|- - - X     X - - -|")
-                print("")
-            elif random_string[i] == "~":
-                print("|- - X -  ~  - X - -|")
-                print("|- - - X     X - - -|")
-                print("")
-            elif random_string[i] == "'":
-                print("|- X - -  '  - - X -|")
-                print("|X - - -     - - - X|")
-                print("")
-            elif random_string[i] == '"':
-                print('|- X - -  "  - - X -|')
-                print("|X - - -     - - - X|")
-                print("")
-            elif random_string[i] == "`":
-                print("|- X - -  `  - - X -|")
-                print("|X - - -     - - - X|")
-                print("")
-
+            for (chord, key) in CHORDS:
+                if key == random_string[i]:
+                    draw_chord(chord)
 
 
 def mainGame(gameChoice,cheat):
@@ -322,7 +119,7 @@ def mainGame(gameChoice,cheat):
         random_string = genString()
         points = len(random_string)
         clearScreen(cheat,random_string)
-        print(f"TAIPO GAME--SCORE= {score}")
+        print(f"   SCORE= {score}")
         print(random_string)
         check = False
         while check == False:
@@ -333,7 +130,7 @@ def mainGame(gameChoice,cheat):
                 score = score + points
             else:
                 clearScreen(cheat,random_string)
-                print(f"TAIPO TYPE GAME -- SCORE = {score}")
+                print(f"   SCORE = {score}")
                 print(random_string)
     end_time = time.time()
     elapsed_time = (end_time - start_time)/60
