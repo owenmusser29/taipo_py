@@ -59,7 +59,6 @@ def clearScreen(cheat,random_string):
             #(TR | BP | IT , '"'),
             #(TR | BP | OT , "`"),
 
-            (TM | TP      , 'y'),
             (TM | BP      , 'j'),
             (TM | BP | OT , '='),
             (TM | BR      , '-'),
@@ -69,6 +68,7 @@ def clearScreen(cheat,random_string):
             (TM | BI | IT  ,'.'),
             (TM | BI | OT , '~'),
 
+            (TI | TM       , 'y'),
             (TI | BR       , 'k'),
             (TI | BR | OT  , '+'),
             (TI | BP       , 'w'),
@@ -111,11 +111,45 @@ def mainGame(gameChoice,cheat):
             random_str = random.choice(word_list)
             return random_str
         if game == 3:
-            word_list = ["time", "love", "game", "word", "free", "fire", "song", "home", 
-         "tree", "life", "moon", "star", "hope", "good", "fast", "snow", 
-         "wind", "blue", "rain", "dark", "wild", "calm", "warm", "kind", 
-         "easy", "hard", "open", "deep", "soft", "true", "just", "pure", 
-         "safe", "bold", "even", "fair", "luck", "wise", "rich", "newt"]
+            word_list = [
+    "able", "acid", "aged", "air", "arms", "bark", "ball", "band", "base", "bath", 
+    "bear", "beat", "bell", "belt", "bird", "boat", "bold", "bomb", "bond", "book", 
+    "boot", "boss", "both", "bowl", "busy", "call", "calm", "card", "care", "carp", 
+    "cast", "cash", "cell", "chip", "chop", "class", "clip", "club", "coat", "code", 
+    "cool", "core", "cost", "crab", "crop", "cure", "dark", "dawn", "dear", "deal", 
+    "dust", "doll", "dogs", "dive", "dome", "door", "draw", "drop", "dust", "duty",
+    "east", "echo", "else", "even", "ever", "evil", "exam", "face", "fact", "fair",
+    "fast", "fear", "feet", "fell", "file", "find", "fire", "fish", "five", "flat",
+    "flow", "fold", "food", "foot", "form", "fort", "from", "full", "fund", "game",
+    "gain", "gate", "give", "goal", "gold", "good", "grip", "grow", "gulf", "hair",
+    "half", "hand", "hard", "hare", "have", "hear", "heat", "help", "here", "hide",
+    "high", "hill", "hint", "hire", "hole", "holy", "hook", "hope", "horn", "hour",
+    "hush", "idea", "idle", "inch", "into", "iron", "isle", "item", "jack", "jane",
+    "jars", "jean", "join", "joke", "jour", "jump", "just", "keen", "keep", "kill",
+    "king", "kiss", "kite", "knee", "knob", "knot", "land", "last", "late", "lava",
+    "lawn", "lead", "left", "lend", "less", "life", "like", "line", "link", "lion",
+    "list", "live", "load", "lock", "long", "look", "lost", "loud", "luck", "made",
+    "mail", "make", "mall", "map", "mask", "mass", "mate", "math", "mead", "meal",
+    "mean", "meat", "mine", "mint", "mock", "mode", "more", "move", "much", "must",
+    "name", "near", "neck", "need", "nest", "note", "noun", "only", "open", "oral",
+    "over", "pace", "pack", "pale", "palm", "park", "part", "pass", "path", "pause",
+    "peak", "peer", "pick", "pipe", "plan", "play", "plow", "plug", "poll", "pool",
+    "poor", "port", "post", "pull", "pure", "push", "race", "rack", "rage", "rail",
+    "rain", "rake", "rare", "rate", "read", "reef", "rest", "ride", "ring", "risk",
+    "roll", "roof", "room", "root", "rose", "rude", "rush", "salt", "same", "sand",
+    "save", "seas", "seat", "sell", "send", "sent", "serve", "sett", "sew", "show",
+    "sick", "side", "sign", "sink", "site", "skin", "skip", "slip", "slow", "slot",
+    "snow", "soft", "sole", "song", "soon", "sort", "soul", "spin", "spot", "stab",
+    "star", "step", "stop", "store", "stow", "stun", "sure", "swim", "take", "talk",
+    "task", "team", "tear", "tell", "term", "test", "than", "that", "then", "they",
+    "thin", "this", "thus", "time", "tone", "tool", "tore", "tour", "town", "trap",
+    "tree", "trip", "true", "turn", "tune", "unit", "used", "user", "vary", "veal",
+    "very", "vote", "vows", "wait", "wake", "wall", "want", "warn", "warp", "wash",
+    "weak", "weal", "wear", "week", "weep", "well", "west", "what", "when", "whip",
+    "whom", "wide", "wife", "wild", "will", "wind", "wine", "wing", "wipe", "wish",
+    "with", "wood", "word", "work", "worn", "wrap", "yarn", "yell", "yes", "yoga",
+    "zone", "zoom"
+]
             random_str = random.choice(word_list)
             return random_str
         if game ==  4:
